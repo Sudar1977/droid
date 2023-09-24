@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1695497407 source:d:\geekbrains.ru\projects\c\drone\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"curses.h"
+	<inttypes.h>
+	<string.h>
+	<wchar.h>
+	<unistd.h>
+	"droid.h"
+
+1695469910 d:\geekbrains.ru\projects\c\drone\droid.h
+	<stdio.h>
+
+1695496434 source:d:\geekbrains.ru\projects\c\drone\droid.c
+	"droid.h"
+	"curses.h"
+
+1695478951 source:d:\geekbrains.ru\projects\c\drone\map.c
+
