@@ -56,6 +56,7 @@ int main()
 
 
     droid_t droid[MAX_DROIDS];
+    tail_t  tail[MAX_TAIL_SIZE];
 
     initscr();// Старт curses mod
     keypad(stdscr, TRUE);// Включаем F1, F2, стрелки и т.д.
@@ -69,7 +70,8 @@ int main()
     sprintf(str,"  Use arrows for control. Press 'q' for EXIT max_y=%d, max_x=%d",max_y, max_x);
     printHelp(str);
 
-    initHead(droid,2,2);
+    init(droid,tail,5,20,20);
+//    initHead(droid,20,20);
     initControls(droid);
     initLevel();
 
@@ -78,6 +80,8 @@ int main()
         clock_t begin = clock();
         key_pressed = getch(); // Считываем клавишу
         go(droid); // Рисуем дроида
+        goTail(droid);
+
         if(checkDirection(droid, key_pressed))
         {
             changeDirection(droid, key_pressed);
@@ -101,7 +105,6 @@ int main()
         while((double)(clock() - begin)/CLOCKS_PER_SEC<DELAY)
         {}
 
-//        goTail(snakes[snake_id]); //?????? ?????
     }
     endwin();
     return 0;

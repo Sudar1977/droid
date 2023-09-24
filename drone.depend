@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1695497407 source:d:\geekbrains.ru\projects\c\drone\main.c
+1695583221 source:d:\geekbrains.ru\projects\c\drone\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -13,7 +13,7 @@
 1695469910 d:\geekbrains.ru\projects\c\drone\droid.h
 	<stdio.h>
 
-1695496434 source:d:\geekbrains.ru\projects\c\drone\droid.c
+1695583273 source:d:\geekbrains.ru\projects\c\drone\droid.c
 	"droid.h"
 	"curses.h"
 

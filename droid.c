@@ -20,6 +20,14 @@ void initTail(tail_t t[], size_t size)
     }
 }
 
+void init(droid_t *head, struct tail_t *tail, size_t size, int x, int y) {
+    //clear(); // ??????? ???? ?????
+    initTail(tail, MAX_TAIL_SIZE);
+    initHead(head, x, y);
+    head->tail = tail; // ??????????? ? ?????? ?????
+    head->tsize = size+1;
+}
+
 void initControls(droid_t *head)
 {
     head->controls.down  = KEY_DOWN;
@@ -87,4 +95,16 @@ void go(droid_t *head) {
 //    mvprintw(max_y, max_x, ch);
 
     refresh();
+}
+
+void goTail(droid_t *head) {
+    char ch = '*';
+    mvprintw(head->tail[head->tsize-1].y, head->tail[head->tsize-1].x, " ");
+    for(size_t i = head->tsize-1; i>0; i--) {
+        head->tail[i] = head->tail[i-1];
+        if( head->tail[i].y || head->tail[i].x)
+            mvprintw(head->tail[i].y, head->tail[i].x, "%c", ch);
+    }
+    head->tail[0].x = head->x;
+    head->tail[0].y = head->y;
 }
